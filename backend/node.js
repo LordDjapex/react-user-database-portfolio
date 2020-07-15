@@ -3,10 +3,6 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const cors = require('cors')
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('../public'))
-}
-
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1/user_database', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(() => {
         console.log('Mongoose successfully connected')
